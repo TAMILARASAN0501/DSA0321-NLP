@@ -1,0 +1,9 @@
+import re
+
+def regex_example(text):
+    pattern = r'\b\w*ain\w*\b'  
+    matches = re.findall(pattern, text)
+    return matches
+
+text = "The rain in Spain stays mainly in the plain."
+print("Matches:", regex_example(text))
