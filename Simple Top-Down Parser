@@ -1,0 +1,9 @@
+class Parser:
+    def parse(self, tokens):
+        if tokens[0] == 'S':
+            return 'S -> NP VP'
+
+text = "S NP VP"
+tokens = text.split()
+parser = Parser()
+print("Top-down Parse:", parser.parse(tokens))
