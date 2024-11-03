@@ -1,0 +1,13 @@
+def transform_tagging(tokens):
+    tagged = []
+    for word in tokens:
+        if word.endswith('ed'):
+            tagged.append((word, 'VBD'))
+        else:
+            tagged.append((word, 'NN'))
+    return tagged
+
+text = "He walked to the store."
+tokens = nltk.word_tokenize(text)
+tagged = transform_tagging(tokens)
+print("Transformation-based POS Tags:", tagged)
