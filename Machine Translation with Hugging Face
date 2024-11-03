@@ -1,0 +1,8 @@
+from transformers import pipeline
+
+def translate_text(text):
+    translator = pipeline("translation_en_to_fr")
+    return translator(text)[0]['translation_text']
+
+text = "Hello, how are you?"
+print("Translation:", translate_text(text))
