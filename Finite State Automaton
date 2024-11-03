@@ -1,0 +1,16 @@
+def fsa(string):
+    state = 0
+    for char in string:
+        if state == 0:
+            if char == 'a':
+                state = 1
+        elif state == 1:
+            if char == 'b':
+                state = 2
+                break  # Accepting state
+            else:
+                state = 0  # Reset state
+    return state == 2  # Check if in accepting state
+
+# Test the FSA
+print("Does 'xxab' end with 'ab'?", fsa("xxab"))
