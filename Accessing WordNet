@@ -1,0 +1,8 @@
+from nltk.corpus import wordnet
+
+def access_wordnet(word):
+    synsets = wordnet.synsets(word)
+    return [syn.name() for syn in synsets]
+
+nltk.download('wordnet')
+print("Synsets for 'dog':", access_wordnet('dog'))
