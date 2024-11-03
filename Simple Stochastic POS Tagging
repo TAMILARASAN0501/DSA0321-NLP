@@ -1,0 +1,10 @@
+import random
+
+def stochastic_pos_tagger(word):
+    tags = ['NN', 'VB', 'JJ']
+    return word, random.choice(tags)
+
+text = "The dog barks loudly."
+tokens = nltk.word_tokenize(text)
+tagged = [stochastic_pos_tagger(word) for word in tokens]
+print("Stochastic POS Tags:", tagged)
