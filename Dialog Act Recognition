@@ -1,0 +1,16 @@
+def dialog_act_recognition(dialog):
+    acts = []
+    for sentence in dialog.split('.'):
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        if "?" in sentence:
+            acts.append((sentence, "Question"))
+        elif "!" in sentence:
+            acts.append((sentence, "Exclamation"))
+        else:
+            acts.append((sentence, "Statement"))
+    return acts
+
+dialog = "Hello! How are you? I am fine. What about you?"
+print("Dialog Acts:", dialog_act_recognition(dialog))
