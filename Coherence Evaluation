@@ -1,0 +1,19 @@
+import spacy
+
+# Load the English NLP model
+nlp = spacy.load("en_core_web_sm")
+
+def coherence_evaluation(text):
+    sentences = list(nlp(text).sents)
+    scores = []
+    
+    for i in range(len(sentences) - 1):
+        # Calculate similarity between consecutive sentences
+        score = sentences[i].similarity(sentences[i + 1])
+        scores.append(score)
+
+    return scores
+
+text = "The cat sat on the mat. It looked very comfortable."
+coherence_scores = coherence_evaluation(text)
+print("Coherence Scores:", coherence_scores)
