@@ -1,0 +1,13 @@
+import openai
+
+openai.api_key = "YOUR_API_KEY"  # Ensure you set your API key
+
+def generate_text(prompt):
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=prompt,
+        max_tokens=50
+    )
+    return response.choices[0].text.strip()
+
+print("Generated Text:", generate_text("Once upon a time"))
