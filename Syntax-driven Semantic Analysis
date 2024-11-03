@@ -1,0 +1,9 @@
+import nltk
+
+def extract_noun_phrases(text):
+    tokens = nltk.word_tokenize(text)
+    pos_tags = nltk.pos_tag(tokens)
+    return [word for word, pos in pos_tags if pos.startswith('NN')]
+
+text = "The quick brown fox jumps over the lazy dog."
+print("Noun Phrases:", extract_noun_phrases(text))
