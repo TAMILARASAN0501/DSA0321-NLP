@@ -1,0 +1,14 @@
+import re
+
+def rule_based_pos_tagger(word):
+    if re.search(r'ly$', word):
+        return word, 'RB'
+    elif re.search(r'ing$', word):
+        return word, 'VBG'
+    else:
+        return word, 'NN'
+
+text = "He is running quickly."
+tokens = nltk.word_tokenize(text)
+tagged = [rule_based_pos_tagger(word) for word in tokens]
+print("Rule-based POS Tags:", tagged)
