@@ -1,0 +1,12 @@
+import nltk
+from nltk.stem import WordNetLemmatizer
+
+nltk.download('punkt')
+nltk.download('wordnet')
+
+def morphological_analysis(words):
+    lemmatizer = WordNetLemmatizer()
+    return [lemmatizer.lemmatize(word) for word in words]
+
+words = ['running', 'better', 'cats']
+print("Lemmas:", morphological_analysis(words))
