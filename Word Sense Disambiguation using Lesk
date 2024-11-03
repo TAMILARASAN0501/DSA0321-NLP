@@ -1,0 +1,9 @@
+from nltk.wsd import lesk
+
+def word_sense_disambiguation(sentence, word):
+    return lesk(sentence.split(), word)
+
+sentence = "I went to the bank to deposit money."
+word = "bank"
+sense = word_sense_disambiguation(sentence, word)
+print(f"Most likely sense of '{word}': {sense.definition() if sense else 'Not found'}")
