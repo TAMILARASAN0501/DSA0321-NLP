@@ -1,0 +1,8 @@
+import nltk
+
+def pos_tagging(text):
+    tokens = nltk.word_tokenize(text)
+    return nltk.pos_tag(tokens)
+
+text = "The quick brown fox jumps over the lazy dog."
+print("POS Tags:", pos_tagging(text))
